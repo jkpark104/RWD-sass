@@ -4,10 +4,11 @@
 
 .appHeader {
   @include mobile {
+    position: relative;
     @include flexbox(column);
     background: $darkbrown;
     padding: 0 rem(20px);
-    position: relative;
+    margin: 0 rem(-20px);
   }
 
   @include desktop {
@@ -17,6 +18,7 @@
     // grid-template-rows: 50px 50px;
     grid-template-areas: "logo member"
       "logo search";
+    // align-items: center;
   }
 
   // 로고

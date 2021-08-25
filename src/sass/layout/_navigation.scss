@@ -1,2 +1,81 @@
-@use './../utils' as *;
-@use './../components' as *;
+@use './../utils'as *;
+@use './../components'as *;
+
+.menu {
+  @include desktop {
+    background-color: brown;
+    padding: rem(16px) 0;
+  }
+
+  &__list {
+    @include mobile {
+      position: fixed;
+      z-index: 500;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      width: 70%;
+      height: 100vh;
+      background-color: rgba($darkbrown, .95);
+      padding: rem(32px);
+      transition: transform 200ms ease;
+    }
+
+    @include desktop { 
+      @include boxSizeMax($paddingX: rem(20px));
+      @include flexbox(row, space-between, center, nowrap);
+      font-size: rem(18px);
+    }
+  }
+
+  &__item {
+    @include mobile {
+      margin-bottom: rem(16px);
+    }
+  }
+
+  &__link {
+    display: block;
+    // background-color: blue;
+    padding: rem(8px);
+    font-weight: 500;
+    color: $white;
+  }
+}
+
+.menu.is-active {
+  .menu__list {
+    // transform: none;
+  }
+  
+}
+
+// .appNavigation {
+//   @include mobile {
+//     width: 60vh;
+//     position: fixed;
+//     height: 100vh;
+//     top: 0;
+//     padding: rem(50px) rem(20px);
+//     background-color: orange;
+//   }
+
+//   @include desktop {}
+// }
+
+// .menu__list {
+//   .menu__item {
+//     @include mobile {
+//       padding: rem(10px) 0;
+//     }
+//   }
+
+
+//   @include desktop {
+//     padding: rem(50px) 0;
+//     @include boxSizeMax($paddingX: 20px);
+//     @include flexbox;
+//     background-color: blue;
+//     justify-content: space-between;
+//   }
+// }

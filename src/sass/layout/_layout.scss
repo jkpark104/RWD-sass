@@ -1,1 +1,11 @@
 @use './../utils' as *;
+
+.app {
+  min-width: 320px;
+  padding: 0 rem(20px);
+}
+
+// 임시
+// video {
+//   width: 100%;
+// }
