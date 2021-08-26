@@ -1,10 +1,9 @@
 @use './../utils'as *;
 
-// @custom-selector :--home-section-title .book__title,
+// @custom-selector :--group .book__title, .news;
 // .news__title;
 
 .homeMain {
-
   // 섹션 공통 여백
   .book,
   .news,
@@ -22,7 +21,7 @@
     // min-height: rem(60px);
     // padding-left: rem(64px);
     margin-bottom: rem(16px);
-    background-color: yellow;
+    // background-color: yellow;
   }
 
   // 섹션 영문 제목 공통 스타일
@@ -148,6 +147,32 @@
           @include ellipsis;
         }
       }
+    }
+  }
+
+  //트위터
+  .twitter {
+    &__userInfo {
+      display: inline-flex;
+      margin-bottom: rem(12px);
+    }
+
+    &__userProfile {
+      width: rem(100px);
+      height: rem(100px);
+      border-radius: 50%;
+      overflow: hidden;
+      float: right;
+      shape-outside: circle(50%);
+    }
+
+    &__userProfileImage {
+      @include responsive;
+    }
+
+    &__date {
+      display: block;
+      margin-top: rem(8px);
     }
   }
 
